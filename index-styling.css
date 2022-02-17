@@ -14,13 +14,19 @@ p{
 
 #main{
     background-color: #e7e7e7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 #game-div{
     margin:0 auto;
-    margin-top: 4rem;
-    max-width: 320px;
+    max-width: 360px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1.5rem;
@@ -38,6 +44,7 @@ p{
     justify-content: center;
     text-align: center;
     color: #3b3b3b;
+    font-size: 1.15rem;
 }
 
 .symbol{
@@ -52,12 +59,12 @@ p{
     background-color: #e7e7e7;
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(3, 90px);
-    grid-template-rows: repeat(3, 90px);
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
     grid-gap: 1px;
     justify-content: center;
     border-radius: 25px;
-    box-shadow: 10px 10px 20px #d1d4db, -8px -8px 15px #f1f1f1 ;
+    box-shadow: 10px 10px 20px #d1d4db, -8px -8px 17px #f1f1f1 ;
     transition-duration: 0.5s;
 }
 
@@ -109,6 +116,7 @@ p{
     padding: 0.5rem;
     background-color: #eaeaea;
     font-family: 'Inconsolata', monospace;
+    font-size: 1.3rem;
     border-style: none;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -133,6 +141,7 @@ p{
     top: 0px;
     height: 100%;
     width: 100%;
+    background-color: rgba(33, 33, 36, 0.07);
     position: absolute;
     z-index: 1;
     display: flex;
@@ -149,10 +158,9 @@ p{
 #winner{
     font-size: 10rem;
     font-family: 'Outfit', sans-serif;
-}
-
-#win-desc{
-    font-size: 4rem;
+    line-height: 8.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .blurred{
@@ -170,4 +178,32 @@ p{
     margin: 0 auto;
     text-align: center;
     width: 100%;
+}
+
+@media only screen and (max-width: 426px) {
+    #game-div{
+        max-width: 320px;
+    }
+
+    .scoring{
+        font-size: 1rem;
+    }
+
+    #gameboard-div{
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(3, 90px);
+    }
+
+    #reset-btn{
+        font-size: 1.15rem;
+    }
+
+    #winner{
+        font-size: 8rem;
+        font-family: 'Outfit', sans-serif;
+        line-height: 6.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
 }
